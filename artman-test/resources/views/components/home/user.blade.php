@@ -3,6 +3,9 @@
 @endphp
 
 <div class="list-block">
-    <span class="name">Name: {{ $user->name }}</span>
-    <span>Status: {{ $userStatus->getTitle() }}</span>
+    <span class="text">{{ __('Name: :name', ['name' => $user->name]) }}</span>
+    @auth
+        <span class="text">{{ __('E-mail: :email', ['email' => $user->email]) }}</span>
+        <span class="text">{{ $userStatus->getTitle() }}</span>
+    @endauth
 </div>
