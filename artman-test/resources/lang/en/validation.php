@@ -131,8 +131,11 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        // 'attribute-name' => [
+        //     'rule-name' => 'custom-message',
+        // ],
+        'g-recaptcha-response' => [
+            'required' => ':attribute validation fail',
         ],
     ],
 
@@ -147,6 +150,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'g-recaptcha-response' => 'Recaptcha',
+    ],
 
 ];
