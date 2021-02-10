@@ -1,0 +1,10 @@
+.home {
+  .list {
+    display: flex;
+    flex-direction: column;
+
+    &-block {
+      border-bottom: 2px solid black;
+    }
+  }
+}

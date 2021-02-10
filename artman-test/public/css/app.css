@@ -31433,6 +31433,15 @@ select {
           animation: bounce 1s infinite;
 }
 
+.home .list {
+  display: flex;
+  flex-direction: column;
+}
+
+.home .list-block {
+  border-bottom: 2px solid black;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
