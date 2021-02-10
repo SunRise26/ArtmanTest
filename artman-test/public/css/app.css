@@ -31433,13 +31433,29 @@ select {
           animation: bounce 1s infinite;
 }
 
-.home .list {
+.input.is-disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 25%;
+}
+
+.home-page .list {
   display: flex;
   flex-direction: column;
 }
 
-.home .list-block {
+.home-page .list-block {
   border-bottom: 2px solid black;
+}
+
+.profile-page .user-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-page .user-data .text,
+.profile-page .user-data .input {
+  margin-top: 1rem;
 }
 
 @media (min-width: 640px) {

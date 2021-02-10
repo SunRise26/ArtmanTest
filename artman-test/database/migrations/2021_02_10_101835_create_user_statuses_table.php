@@ -14,11 +14,12 @@ class CreateUserStatusesTable extends Migration
     public function up()
     {
         Schema::create('user_statuses', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->unsignedInteger('status_id')->default(0);
             $table->timestamps();
 
-            $table->unique(['user_id', 'status_id']);
+            $table->unique(['user_id']);
         });
     }
 

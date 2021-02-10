@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Facades\ReCaptchaService;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\RegisterUserRequest;
+use App\Http\Requests\Auth\RegisterUserRequest;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use GuzzleHttp\Client;

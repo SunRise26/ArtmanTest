@@ -1,0 +1,11 @@
+.profile-page {
+  .user-data {
+    display: flex;
+    flex-direction: column;
+
+    .text,
+    .input {
+      margin-top: 1rem;
+    }
+  }
+}

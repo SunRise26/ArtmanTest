@@ -26,6 +26,8 @@
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
+        "jquery": "^3.5.1",
+        "jquery.cookie": "^1.4.1",
         "sass": "^1.32.7"
     }
 }

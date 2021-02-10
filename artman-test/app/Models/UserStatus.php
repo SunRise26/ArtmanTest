@@ -34,10 +34,14 @@ class UserStatus extends Model
         return array_search($statusId, self::$user_statuses);
     }
 
+    public static function getTitleByCode($code)
+    {
+        return trans("user_status.$code");
+    }
+
     public static function getTitleById($statusId)
     {
-        $code = self::getCodeById($statusId);
-        return trans("user_status.$code");
+        return self::getTitleByCode(self::getCodeById($statusId));
     }
 
     public function getTitle()

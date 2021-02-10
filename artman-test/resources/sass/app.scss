@@ -2,5 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+// abstracts
+@import 'abstracts/ui';
+
 // pages
 @import 'pages/home';
+@import 'pages/profile';
