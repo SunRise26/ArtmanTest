@@ -15,7 +15,14 @@ RUN (cd artman-test && composer install)
 
 4. Copy .env settings<br />
 RUN (cd artman-test && cp .env.example .env)<br />
-!!! Generally, it is completely configured. MAIL_* configurations configured to use special email for testing, so you can leave them as they are.
+!!! Generally, it is completely configured. MAIL_* configurations configured to use special email for testing, so you can leave them as they are.<br />
+!!!!!!<br />
+!!! ONE MORE THING. I've a little bit extended original task with user status (online/offline).<br />
+!!! Now it has the following behavior:<br />
+!!!    If user logged out or all user (e.g. from multiple browser clients) sessions expired, it will show offline status.<br />
+!!!    But when user logged in, it will show status that was selected by user last time.<br />
+!!!    Perhaps, you'd like to test this manually, so you can change SESSION_LIFETIME in env file to 1 (in minutes) or some other small values to speedup expiration of session.<br />
+!!!!!!<br />
 
 5. Migrations, seeders, etc<br />
 RUN (cd artman-test && php artisan migrate)<br />
