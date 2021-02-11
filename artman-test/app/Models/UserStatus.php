@@ -17,6 +17,7 @@ class UserStatus extends Model
     protected $fillable = [
         'user_id',
         'status_id',
+        'real_status_id',
     ];
 
     protected static array $user_statuses = [

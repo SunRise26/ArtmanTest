@@ -10,7 +10,9 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $users = User::with('userStatus')->get();
+        $users = User::with('userStatus')
+            ->with('sessions')
+            ->get();
 
         return view('home', [
             'users' => $users,

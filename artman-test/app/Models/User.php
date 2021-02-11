@@ -50,4 +50,46 @@ class User extends Authenticatable
     {
         return $this->hasOne(UserStatus::class);
     }
+
+    public function sessions()
+    {
+        return $this->hasMany(Session::class)
+            ->orderByDesc('last_activity'); // latest to top
+    }
+
+    /**
+     * Update and return real user status id
+     * 
+     * @return int
+     */
+    public function updateUserRealStatusId()
+    {
+        $userStatuses = UserStatus::getUserStatuses();
+        $latestActiveSession = $this->sessions->first();
+        $newUserStatus = null;
+
+        if (!$latestActiveSession || $latestActiveSession->isExpired()) {
+            $newUserStatus = $userStatuses['offline'];
+        } else {
+            $newUserStatus = $userStatuses['online'];
+        }
+
+        if ($this->userStatus->real_status_id != $newUserStatus) {
+            $this->userStatus->update(['real_status_id' => $newUserStatus]);
+        }
+        return $this->userStatus->real_status_id;
+    }
+
+    /**
+     * Return user status id to display on home page
+     * 
+     * @return int
+     */
+    public function getUserPublicStatus()
+    {
+        if ($this->updateUserRealStatusId() != 0) {
+            return $this->userStatus->status_id;
+        }
+        return 0;
+    }
 }
