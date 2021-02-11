@@ -32,7 +32,6 @@ RUN (cd artman-test && php artisan key:generate)<br />
 
 6. Phew...
 Now available on https://localhost (by default)<br />
-Admin: https://localhost/admin
 
 ## Testing
 
